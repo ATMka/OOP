@@ -29,6 +29,7 @@ public class Library implements LibraryImpl {
         return books;
     }
 
+    @Override
     public boolean addBook(Book book) {
         for (int i = 0; i < books.length; i++) {
             if (books[i] == null) {
@@ -40,6 +41,7 @@ public class Library implements LibraryImpl {
         return false;
     }
 
+    @Override
     public boolean delBook(int id) {
         for (int i = 0; i < books.length; i++) {
             if (books[i] != null && books[i].getIdBook() == id) {
@@ -51,6 +53,7 @@ public class Library implements LibraryImpl {
         return false;
     }
 
+    @Override
     public Book searchBook(String search){
         for (int i = 0; i < getBooks().length; i++) {
             if(getBooks()[i] != null && (getBooks()[i].getName().toLowerCase().indexOf(search.toLowerCase()) != -1 || getBooks()[i].getAuthor().toLowerCase().indexOf(search.toLowerCase()) != -1
@@ -61,6 +64,7 @@ public class Library implements LibraryImpl {
         return null;
     }
 
+    @Override
     public Book searchBookFromId(int id){
         for (int i = 0; i < getBooks().length; i++) {
             if(getBooks()[i] != null && getBooks()[i].getIdBook() == id){

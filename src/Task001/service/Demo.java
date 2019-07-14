@@ -21,7 +21,7 @@ public class Demo {
         System.out.println(myLibrary.toString());
         System.out.println("Count: " + Book.getCount());
 
-        //myLibrary.delBook(2);
+        myLibrary.delBook(2);
 
         System.out.println(myLibrary.toString());
         System.out.println("Count: " + Book.getCount());
