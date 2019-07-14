@@ -25,11 +25,11 @@ public class Grade {
         this.value = value;
     }
 
+
     @Override
     public String toString() {
         return "Grade{" +
                 "lesson=" + lesson.getNameSubject() +
-                ", value=" + value.getNameValue() +
-                '}';
+                ", value=" + '}';
     }
 }
