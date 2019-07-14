@@ -25,6 +25,10 @@ public class Library implements LibraryImpl {
         return name;
     }
 
+    public Book[] getBooks() {
+        return books;
+    }
+
     public boolean addBook(Book book) {
         for (int i = 0; i < books.length; i++) {
             if (books[i] == null) {
@@ -48,11 +52,19 @@ public class Library implements LibraryImpl {
     }
 
     public Book searchBook(String search){
-        for (Book book :books
-             ) {
-            if(book.getName().toLowerCase().indexOf(search.toLowerCase()) != -1 || book.getAuthor().toLowerCase().indexOf(search.toLowerCase()) != -1
-                    || book.getGenre().getNameGenre().toLowerCase().indexOf(search.toLowerCase()) != -1){
-                return book;
+        for (int i = 0; i < getBooks().length; i++) {
+            if(getBooks()[i] != null && (getBooks()[i].getName().toLowerCase().indexOf(search.toLowerCase()) != -1 || getBooks()[i].getAuthor().toLowerCase().indexOf(search.toLowerCase()) != -1
+                    || getBooks()[i].getGenre().getNameGenre().toLowerCase().indexOf(search.toLowerCase()) != -1)){
+                return getBooks()[i];
+            }
+        }
+        return null;
+    }
+
+    public Book searchBookFromId(int id){
+        for (int i = 0; i < getBooks().length; i++) {
+            if(getBooks()[i] != null && getBooks()[i].getIdBook() == id){
+                return getBooks()[i];
             }
         }
         return null;

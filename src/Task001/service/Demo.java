@@ -21,14 +21,22 @@ public class Demo {
         System.out.println(myLibrary.toString());
         System.out.println("Count: " + Book.getCount());
 
-        myLibrary.delBook(2);
+        //myLibrary.delBook(2);
 
         System.out.println(myLibrary.toString());
         System.out.println("Count: " + Book.getCount());
 
-        String search = "Зыков";
-        if (myLibrary.searchBook(search) != null){
-            System.out.println("Результат поиска: " + myLibrary.searchBook(search));
+        String query = "Зыков";
+        if (myLibrary.searchBook(query) instanceof Book){
+            System.out.println("Результат поиска: " + myLibrary.searchBook(query));
+        }
+        else {
+            System.out.println("Ничего не найдено");
+        }
+
+        int fromQueryId = 1;
+        if (myLibrary.searchBookFromId(fromQueryId) instanceof Book){
+            System.out.println("Результат поиска: " + myLibrary.searchBookFromId(fromQueryId));
         }
         else {
             System.out.println("Ничего не найдено");
