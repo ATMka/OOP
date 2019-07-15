@@ -28,8 +28,6 @@ public class Grade {
 
     @Override
     public String toString() {
-        return "Grade{" +
-                "lesson=" + lesson.getNameSubject() +
-                ", value=" + '}';
+        return "Урок " + lesson.getNameSubject() + " - " + value.getIdValue();
     }
 }

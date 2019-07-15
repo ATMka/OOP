@@ -7,9 +7,10 @@ import java.util.Arrays;
 public class StudentProgress implements StudentProgressImpl {
     public StudentProgress(String name) {
         this.name = name;
+        this.progress = new Grade[3];
     }
 
-    private Grade[] progress = new Grade[3];
+    private Grade[] progress;
     private String name;
 
     public Grade[] getProgress() {
@@ -23,7 +24,7 @@ public class StudentProgress implements StudentProgressImpl {
     @Override
     public boolean addGrade(Grade grade){
         for (int i = 0; i < progress.length; i++) {
-            if (progress[i] == null ){
+            if (progress[i] == null){
                 progress[i] = grade;
                 return true;
             }
@@ -42,9 +43,6 @@ public class StudentProgress implements StudentProgressImpl {
 
     @Override
     public String toString() {
-        return "StudentProgress{" +
-                "progress=" + Arrays.toString(progress) +
-                ", name='" + name + '\'' +
-                '}';
+        return name + ": " + Arrays.toString(progress);
     }
 }

@@ -7,7 +7,7 @@ public class Student {
     }
     private String name;
     private static int id=0;
-    private StudentProgress progress;
+    private StudentProgress progress = new StudentProgress("Сессия 1");
 
     public String getName() {
         return name;
@@ -17,17 +17,17 @@ public class Student {
         return id;
     }
 
-    public StudentProgress getProgress() {
+    public StudentProgress getSessionProgress() {
         return progress;
     }
 
-    public boolean addProgress (Grade grade){
-        return progress.addGrade(grade);
+    public void addProgress (Grade grade){
+        id++;
+        progress.addGrade(grade);
     }
 
-
-
     public boolean delProgress (int id){
+        id--;
         return progress.delGrade(id);
     }
 
